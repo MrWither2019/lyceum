@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+lyceum_token
+.env
+*.key
+*.pem
+__pycache/
+.venv/
+venv/
