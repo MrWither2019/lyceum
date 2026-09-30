@@ -1,0 +1,51 @@
+def f(s,m = 2):
+    if s >= 313: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s + 2, m - 1),f(s + 3, m - 1),f(s * 3, m - 1)]
+    return any(h) if m % 2 != 0 else all(h) #у ыторого хотя бы одна при всех ходах другого
+
+print(19, sum([s for s in range(1,313) if f(s,2)]))
+#207
+
+
+def f(s,m):
+    if s >= 313: return m % 2 == 0
+    if m == 0 : return 0
+    h = [f(s+2,m-1),f(s+3,m-1),f(s*3,m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print([s for s in range(1,313) if (not f(s, 1) and f(s,3))])
+
+100 102
+
+def f(s,m):
+    if s >= 313: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s + 2, m - 1), f(s + 3, m - 1), f(s * 3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print(sum([s for s in range(1,313) if not f(s,2) and f(s,4)]))
+
+197
+
+def f(s, m):
+    if s <= 19: return not m % 2
+    if m == 0: return 0
+    h = [f(s - 2, m - 1), f(s - 5, m - 1), f(s // 3, m - 1)]
+    return any(h) if m % 2 else all(h)
+
+for s in range(20, 150):
+    if (not f(s,1)) and f(s,3):
+        print(s) 
+
+62 63
+
+def f(s,m):
+    if s <= 19: return not m % 2
+    if m == 0: return 0
+    h = [f(s - 2, m - 1), f(s - 5, m - 1), f(s // 3, m - 1)]
+    return any(h) if m % 2 else all(h)
+
+print([s for s in range(20, 100) if (not f(s,2)) and f(s,4)])
+
+64
