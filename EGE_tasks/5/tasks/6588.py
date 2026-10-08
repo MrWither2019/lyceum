@@ -11,7 +11,7 @@ for N in range(1,500):
     if (r := int(R,2)) > 180:
         res.update({N: (R, r)})
 
-print(sorted(res.items(), key = lambda item: item[0])[0])
+print(*sorted(res.items(), key = lambda item: item[0])[:10], sep = '\n')
     
     
     
